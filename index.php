@@ -99,8 +99,14 @@
                     <h5>( <?= $theMatrix->getGenre(); ?> )</h5>
                     <h4> <?= $theMatrix->getDirector(); ?> </h4>
                     
-                    <p> attori </p>
-                    <time>Screen Time: <?= $theMatrix->getRunTime() ; ?> </time>
+                    <p> CAST <br>
+                    <?php for($i = 0; $i <= count($theMatrix->actors); $i++) {; ?>
+                    
+                        <span> - <?php echo $theMatrix->actors[$i]; ?>  </span>
+                    
+                    <?php }; ?>
+                    </p>                   
+                     <time>Screen Time: <?= $theMatrix->getRunTime() ; ?> </time>
                     <p>Release Date: <?= $theMatrix->release_date ; ?> </p>
                     <p> <?php echo $theMatrix->plot ; ?> </p>
                 </article>
@@ -112,12 +118,13 @@
                     <h5>( <?php echo $Dune->getGenre(); ?> )</h5>
                     <h4> <?= $Dune->getDirector() ; ?> </h4>
                    
-                    <?php foreach($Dune->actors as $actor); { ?>
+                    <p> CAST <br>
+                    <?php for ($i = 0; $i <= count($Dune->actors); $i++) {; ?>
                     
-                    <p> <?php echo $actor; ?> </p>
+                        <span> - <?php echo $Dune->actors[$i]; ?> </span>
                     
                     <?php }; ?>
-                    
+                    </p>
                     <time> Screen Time: <?= $Dune->getRunTime() ; ?> </time>
                     <p>Release Date: <?php echo $Dune->release_date; ?> </p>
                     <p> <?php echo $Dune->plot; ?>
